@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2023 Freedom Fest Parade Registration Form</title>
+    <link rel="stylesheet" href="form.css">
+    <style>
+      hr {
+  height: 2px;
+  background-color: gainsboro;
+  border: none;
+}
+    </style>
+</head>
+<body bgcolor="#7796c6">
+  <h3 style="text-align: center;">Parade Route: 900 North Eisenhower (Staging) Eisenhower to 6th street turn left. 6th to Adams turn left. </h3>
+  <hr style="background-color: black;">
+        <h1 style="text-align: center; font-size: 40px;"> <img src="city.png" width="200px" height="100">2023 Freedom Fest Parade Registration Form<img src="bulelogo.png" width="100px" height="100px"></h1>
+        <h2 style="text-align: center;">July 4, 2023 |
+          Entry Deadline is June 16, 2023
+          </h2>
+          
+        <div class="bg-img">
+          <form id="regForm" action="https://formsubmit.co/davidmthompson@usd475.org" method="POST">
+            <input type="hidden" name="_next" value="https://yourdomain.co/thanks.html">
+            <input type="hidden" name="_template" value="box">
+            <input type="hidden" name="_subject" value="2023 Freedom Fest Parade Registration ">
+
+<h1>Register:</h1>
+
+<!-- One "tab" for each step in the form: -->
+<div class="tab">Name of organization:
+  <p><input placeholder="Name of organization" oninput="this.className = ''"></p>
+  <label >Contact person name:
+  <p><input placeholder="Contact person name:" oninput="this.className = ''"></p>
+</div>
+
+<div class="tab">Email:
+  <p><input placeholder="E-mail..." oninput="this.className = ''"></p>
+  <label >Phoen
+  <p><input placeholder="Phone..." oninput="this.className = ''"></p>
+</div>
+
+<div class="tab"> Address:
+
+  <p><input placeholder="Address" oninput="this.className = ''"></p>
+  <label>City:
+  <p><input placeholder="City" oninput="this.className = ''"></p>
+  <label>State: 
+  <p><input placeholder="State" oninput="this.className = ''"></p>
+<label>Zip code</label>
+  <p><input placeholder="Zip code" oninput="this.className = ''"></p>
+</div>
+
+<div class="tab" >
+  <fieldset>
+    <legend>Please check all categories that apply:</legend>
+    <hr>
+    <div>
+      <input type="checkbox" id="scales" name="scales" >
+      <label for="scales">Car Club / Motorized vehicle</label>
+    </div>
+<hr>
+    <div>
+      <input type="checkbox" id="horns" name="horns">
+      <label for="horns">Decorated Car</label>
+    </div>
+    <hr>
+    <div>
+      <input type="checkbox" id="horns" name="horns">
+      <label for="horns">Float     </label>
+    </div>
+    <hr>
+    <div>
+      <input type="checkbox" id="horns" name="horns">
+      <label for="horns">Police/ Fire</label>
+    </div>
+    <hr>
+    <div>
+      <input type="checkbox" id="horns" name="horns">
+      <label for="horns">Color Guard</label>
+    </div>
+    <hr>
+    <div>
+      <input type="checkbox" id="horns" name="horns">
+      <label for="horns">Marching Band</label>
+    </div>
+    <hr>
+    <div>
+      <input type="checkbox" id="horns" name="horns">
+      <label for="horns">Walking Unit</label>
+    </div>
+    <hr>
+    <div>
+      <input type="checkbox" id="horns" name="horns">
+      <label for="horns">Horse unit</label>
+    </div>
+    <br>
+    <hr>
+    <div>
+      <label for="horns">Other Please Describe </label>
+      <input type="text" id="horns" name="horns">
+     
+    </div>
+    <hr>
+    <div>
+      <label for="horns">number of and type of vehicles </label>
+      <input type="text" id="horns" name="horns">
+      
+    </div>
+</fieldset>
+
+</div>
+
+<div style="overflow:auto;">
+  <div style="float:right;">
+    <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+    <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+  </div>
+</div>
+
+<!-- Circles which indicates the steps of the form: -->
+<div style="text-align:center;margin-top:40px;">
+  <span class="step"></span>
+  <span class="step"></span>
+  <span class="step"></span>
+  <span class="step"></span>
+</div>
+
+</form>
+
+
+      
+
+
+
+
+
+
+        
+      </div>
+      <script>
+        var currentTab = 0; // Current tab is set to be the first tab (0)
+showTab(currentTab); // Display the current tab
+
+function showTab(n) {
+  // This function will display the specified tab of the form ...
+  var x = document.getElementsByClassName("tab");
+  x[n].style.display = "block";
+  // ... and fix the Previous/Next buttons:
+  if (n == 0) {
+    document.getElementById("prevBtn").style.display = "none";
+  } else {
+    document.getElementById("prevBtn").style.display = "inline";
+  }
+  if (n == (x.length - 1)) {
+    document.getElementById("nextBtn").innerHTML = "Submit";
+  } else {
+    document.getElementById("nextBtn").innerHTML = "Next";
+  }
+  // ... and run a function that displays the correct step indicator:
+  fixStepIndicator(n)
+}
+
+function nextPrev(n) {
+  // This function will figure out which tab to display
+  var x = document.getElementsByClassName("tab");
+  // Exit the function if any field in the current tab is invalid:
+  if (n == 1 && !validateForm()) return false;
+  // Hide the current tab:
+  x[currentTab].style.display = "none";
+  // Increase or decrease the current tab by 1:
+  currentTab = currentTab + n;
+  // if you have reached the end of the form... :
+  if (currentTab >= x.length) {
+    //...the form gets submitted:
+    document.getElementById("regForm").submit();
+    return false;
+  }
+  // Otherwise, display the correct tab:
+  showTab(currentTab);
+}
+
+function validateForm() {
+  // This function deals with validation of the form fields
+  var x, y, i, valid = true;
+  x = document.getElementsByClassName("tab");
+  y = x[currentTab].getElementsByTagName("input");
+  // A loop that checks every input field in the current tab:
+  for (i = 0; i < y.length; i++) {
+    // If a field is empty...
+    if (y[i].value == "3.1415926535897932384626433832795028841971693993751058209749445923078164062862089986280348253421170679821480865132823066470938446095505822317253594081284811174502841027019385211055596446229489549303819644288109756659334461284756482337867831652712019091456485669234603486104543266482133936072602491412737245870066063155881748815209209628292540917153643678925903600113305305488204665213841469519415116094330572703657595919530921861173819326117931051185480744623799627495673518857527248912279381830119491298336733624406566430860213949463952247371907021798609437027705392171762931767523846748184676694051320005681271452635608277857713427577896091736371787214684409012249534301465495853710507922796892589235420199561121290219608640344181598136297747713099605187072113499999983729780499510597317328160963185950244594553469083026425223082533446850352619311881710100031378387528865875332083814206171776691473035982534904287554687311595628638823537875937519577818577805321712268066130019278766111959092164201989") {
+      // add an "invalid" class to the field:
+      y[i].className += " invalid";
+      // and set the current valid status to false:
+      valid = false;
+    }
+  }
+  // If the valid status is true, mark the step as finished and valid:
+  if (valid) {
+    document.getElementsByClassName("step")[currentTab].className += " finish";
+  }
+  return valid; // return the valid status
+}
+
+function fixStepIndicator(n) {
+  // This function removes the "active" class of all steps...
+  var i, x = document.getElementsByClassName("step");
+  for (i = 0; i < x.length; i++) {
+    x[i].className = x[i].className.replace(" active", "");
+  }
+  //... and adds the "active" class to the current step:
+  x[n].className += " active";
+}
+document.getElementById("radContainer").addEventListener("click", function(e) {
+  const tgt = e.target;
+  const other = document.getElementById("other")
+  other.disabled = tgt.type && tgt.type === "radio" && tgt.id != "otherRad";
+  if (other.disabled) other.value=""; // or not as you wish
+})
+      </script>
+</body>
+</html>
